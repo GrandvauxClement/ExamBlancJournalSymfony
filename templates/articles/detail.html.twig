@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ArticlesController!{% endblock %}
+
+{% block body %}
+    <style>
+        .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+        .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+    </style>
+
+    <div class="container">
+        <h1 class="text-center text-danger">Présentation de l'article : {{ article.nom}} ! ✅</h1>
+        <div class="row mt-5">
+            <div class="col-5">
+                <img src="{{ asset('images/uploads/'~article.image) }}" style="width: 300px">
+            </div>
+            <div class="col">
+                <h4> <span class="text-danger">Catégorie :</span> {{ article.categorie }}</h4>
+                <p> <span class="h4 text-danger">Description :</span> {{ article.description}} </p>
+                <h4> <span class="text-danger"> Ajouté le : </span>{{ article.dateAjout|date('d/m/Y') }} <span class="text-danger">par : </span> {{ article.journaliste }}</h4>
+            </div>
+        </div>
+
+
+
+    </div>
+{% endblock %}
